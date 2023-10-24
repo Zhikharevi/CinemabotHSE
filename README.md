@@ -1,8 +1,7 @@
 # CinemabotHSE
 
-![Untitled](https://github.com/Zhikharevi/CinemabotHSE/assets/73641038/c9b53518-0a19-4ed9-a7fd-0fa4a069fdf3)
-
 CinemabotHSE - это телеграм-бот, который ищет фильмы и сериалы, и выдаёт ссылки, где их можно посмотреть. 
+![Splash Screen](https://github.com/Zhikharevi/CinemabotHSE/assets/73641038/a86059c9-633b-489c-8fcf-f71416f9cb83)
 
 ## Содержание
 
