@@ -1,0 +1,62 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  line:
+    format: "[{levelname}] {name} at {asctime} in {module}:{funcName}:{lineno} - {message}"
+    style: "{"
+    datefmt: "%F %T"
+
+  json:
+    (): logging_json.JSONFormatter
+    datefmt: "%F %T"
+    fields:
+      name: name
+      msg: msg
+      args: args
+      levelname: levelname
+      levelno: levelno
+      pathname: pathname
+      filename: filename
+      module: module
+      exc_info: exc_info
+      exc_text: exc_text
+      stack_info: stack_info
+      lineno: lineno
+      funcName: funcName
+      created: created
+      msecs: msecs
+      relativeCreated: relativeCreated
+      thread: thread
+      threadName: threadName
+      processName: processName
+      process: process
+      message: message
+      asctime: asctime
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: line
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: WARNING
+    formatter: json
+    filename: app.log
+    mode: a
+    encoding: utf-8
+
+root:
+  propagate: true
+  level: INFO
+  handlers: [ console, file ]
+
+loggers:
+  aiosqlite:
+    level: INFO
+
+  asyncio:
+    level: INFO
